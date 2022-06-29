@@ -20,6 +20,8 @@ namespace MultikeysEditor
     /// </summary>
     public partial class MainWindow : Window
     {
+        private System.Windows.Forms.NotifyIcon ni;
+
         public MainWindow()
         {
             // Subscribe to any unhandled exception
@@ -32,8 +34,29 @@ namespace MultikeysEditor
 
             // Setup the core runner
             multikeysCoreRunner = new MultikeysCoreRunner();
-        }
 
+            //Minimize logic
+            ni = new System.Windows.Forms.NotifyIcon();
+            //:\Users\Adam\Desktop\multikeys-master\multikeys\MultikeysEditor\bin\Debug\Multikeys_Logo.ico
+            ni.Icon = new System.Drawing.Icon("Multikeys_Logo.ico");
+            ni.DoubleClick +=
+                delegate (object sender, EventArgs args)
+                {
+                    ni.Visible = false;
+                    this.Show();
+                    this.WindowState = WindowState.Normal;
+                };
+
+        }
+        protected override void OnStateChanged(EventArgs e)
+        {
+            if (WindowState == System.Windows.WindowState.Minimized)
+            {
+                ni.Visible = true;
+                this.Hide();
+            }
+            base.OnStateChanged(e);
+        }
         private void HandleAnyException(object sender, UnhandledExceptionEventArgs e)
         {
             string logDirectory = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\..\\log";

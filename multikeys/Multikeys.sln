@@ -1,7 +1,6 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Remapper", "Remapper\Remapper.vcxproj", "{43CE893C-1874-498E-B9D7-1098CAF46F1D}"
 EndProject
@@ -25,7 +24,8 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{43CE893C-1874-498E-B9D7-1098CAF46F1D}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{43CE893C-1874-498E-B9D7-1098CAF46F1D}.Debug|Any CPU.ActiveCfg = Release|Win32
+		{43CE893C-1874-498E-B9D7-1098CAF46F1D}.Debug|Any CPU.Build.0 = Release|Win32
 		{43CE893C-1874-498E-B9D7-1098CAF46F1D}.Debug|x64.ActiveCfg = Debug|x64
 		{43CE893C-1874-498E-B9D7-1098CAF46F1D}.Debug|x64.Build.0 = Debug|x64
 		{43CE893C-1874-498E-B9D7-1098CAF46F1D}.Debug|x86.ActiveCfg = Debug|Win32
@@ -35,7 +35,8 @@ Global
 		{43CE893C-1874-498E-B9D7-1098CAF46F1D}.Release|x64.Build.0 = Release|x64
 		{43CE893C-1874-498E-B9D7-1098CAF46F1D}.Release|x86.ActiveCfg = Release|Win32
 		{43CE893C-1874-498E-B9D7-1098CAF46F1D}.Release|x86.Build.0 = Release|Win32
-		{7EFEF667-FF08-4861-993D-5EBD2BDA3284}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{7EFEF667-FF08-4861-993D-5EBD2BDA3284}.Debug|Any CPU.ActiveCfg = Release|Win32
+		{7EFEF667-FF08-4861-993D-5EBD2BDA3284}.Debug|Any CPU.Build.0 = Release|Win32
 		{7EFEF667-FF08-4861-993D-5EBD2BDA3284}.Debug|x64.ActiveCfg = Debug|x64
 		{7EFEF667-FF08-4861-993D-5EBD2BDA3284}.Debug|x64.Build.0 = Debug|x64
 		{7EFEF667-FF08-4861-993D-5EBD2BDA3284}.Debug|x86.ActiveCfg = Debug|Win32
@@ -45,7 +46,8 @@ Global
 		{7EFEF667-FF08-4861-993D-5EBD2BDA3284}.Release|x64.Build.0 = Release|x64
 		{7EFEF667-FF08-4861-993D-5EBD2BDA3284}.Release|x86.ActiveCfg = Release|Win32
 		{7EFEF667-FF08-4861-993D-5EBD2BDA3284}.Release|x86.Build.0 = Release|Win32
-		{906018C9-41BF-4658-9A3F-55CA9954AD30}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{906018C9-41BF-4658-9A3F-55CA9954AD30}.Debug|Any CPU.ActiveCfg = Release|Win32
+		{906018C9-41BF-4658-9A3F-55CA9954AD30}.Debug|Any CPU.Build.0 = Release|Win32
 		{906018C9-41BF-4658-9A3F-55CA9954AD30}.Debug|x64.ActiveCfg = Debug|x64
 		{906018C9-41BF-4658-9A3F-55CA9954AD30}.Debug|x64.Build.0 = Debug|x64
 		{906018C9-41BF-4658-9A3F-55CA9954AD30}.Debug|x86.ActiveCfg = Debug|Win32
@@ -79,7 +81,8 @@ Global
 		{BF85D20D-146C-4488-8C1A-3AE3CDF789F2}.Release|x64.Build.0 = Release|Any CPU
 		{BF85D20D-146C-4488-8C1A-3AE3CDF789F2}.Release|x86.ActiveCfg = Release|Any CPU
 		{BF85D20D-146C-4488-8C1A-3AE3CDF789F2}.Release|x86.Build.0 = Release|Any CPU
-		{BE58DE2B-B933-48B8-A1FB-080219BA8E2F}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{BE58DE2B-B933-48B8-A1FB-080219BA8E2F}.Debug|Any CPU.ActiveCfg = Release|Win32
+		{BE58DE2B-B933-48B8-A1FB-080219BA8E2F}.Debug|Any CPU.Build.0 = Release|Win32
 		{BE58DE2B-B933-48B8-A1FB-080219BA8E2F}.Debug|x64.ActiveCfg = Debug|x64
 		{BE58DE2B-B933-48B8-A1FB-080219BA8E2F}.Debug|x64.Build.0 = Debug|x64
 		{BE58DE2B-B933-48B8-A1FB-080219BA8E2F}.Debug|x86.ActiveCfg = Debug|Win32
