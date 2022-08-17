@@ -7,6 +7,7 @@ using System;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -22,6 +23,7 @@ namespace MultikeysEditor
     {
         private System.Windows.Forms.NotifyIcon ni;
 
+        private string _lastLayoutPath = AppDomain.CurrentDomain.BaseDirectory + @"\" + "lastLayout.txt";
         public MainWindow()
         {
             // Subscribe to any unhandled exception
@@ -35,9 +37,40 @@ namespace MultikeysEditor
             // Setup the core runner
             multikeysCoreRunner = new MultikeysCoreRunner();
 
+            //Create previous layout file
+            if(!System.IO.File.Exists(_lastLayoutPath)) File.WriteAllText(_lastLayoutPath, "");
+            //Attempt to load last file
+            string lastLayout = System.IO.File.ReadAllText(_lastLayoutPath);
+            //Attempt to open file if there is a previous layout file path
+            if (!string.IsNullOrWhiteSpace(lastLayout))
+            {
+                try
+                {
+                    var layout = new DomainFacade().LoadLayout(lastLayout);
+                    workingFileName = lastLayout;
+                    // and replace the layout control
+                    layoutControl = new LayoutControl();
+                    layoutControl.LoadLayout(layout);
+                    DockPanelLayout.Children.Clear();
+                    DockPanelLayout.Children.Add(layoutControl);
+                    new DomainFacade().SaveLayout(layoutControl.GetLayout(), workingFileName);
+                    EnableDisableMenuButtons();
+                }
+                catch
+                {
+                    //The file wasn't found or was invalid
+                }
+            }
+            
+            
+            //Launch on startup logic
+            Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            string str = Assembly.GetExecutingAssembly().Location;
+            key.SetValue("Multikeys", str);
+            
             //Minimize logic
             ni = new System.Windows.Forms.NotifyIcon();
-            //:\Users\Adam\Desktop\multikeys-master\multikeys\MultikeysEditor\bin\Debug\Multikeys_Logo.ico
+            //NOTE: An icon file must be present in the release folder
             ni.Icon = new System.Drawing.Icon("Multikeys_Logo.ico");
             ni.DoubleClick +=
                 delegate (object sender, EventArgs args)
@@ -200,7 +233,7 @@ namespace MultikeysEditor
                 // then, the new filenamed is used as the current file being edited
                 workingFileName = saveFileDialog.FileName;
             }
-
+            SaveLastLayout();
             EnableDisableMenuButtons();
         }
 
@@ -232,7 +265,7 @@ namespace MultikeysEditor
                 DockPanelLayout.Children.Clear();
                 DockPanelLayout.Children.Add(layoutControl);
             }
-
+            SaveLastLayout();
             EnableDisableMenuButtons();
         }
 
@@ -308,6 +341,10 @@ namespace MultikeysEditor
             }
         }
 
+        private void SaveLastLayout()
+        {
+            File.WriteAllText(_lastLayoutPath, workingFileName);
+        }
         #endregion
 
 

@@ -10,22 +10,22 @@
         <StackPanel >
 
             <StackPanel Orientation="Horizontal">
-                <Label Content="{x:Static p:Strings.KeyboardName}"
+                <Label Content="{x:Static p:Strings.KeyboardName}" Foreground="{StaticResource PrimaryText}"
                        FontWeight="Bold" FontSize="16"/>
                 <TextBlock x:Name="LabelKeyboardName" VerticalAlignment="Center"
-                       FontWeight="SemiBold" FontSize="16" Foreground="Blue"/>
+                       FontWeight="SemiBold" FontSize="16" Foreground="{StaticResource Primary}"/>
                 <Button Name="ButtonKeyboardNameEdit" Content="{x:Static p:Strings.KeyboardNameEdit}"
                         Width="Auto" MinWidth="60" Height="20" Margin="15,0,0,0"
                         Click="ButtonKeyboardNameEdit_Click"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <Label Content="{x:Static p:Strings.KeyboardAliasLabel}"
+                <Label Content="{x:Static p:Strings.KeyboardAliasLabel}" Foreground="{StaticResource PrimaryText}"
                        FontWeight="Bold" FontSize="16"/>
                 <TextBlock x:Name="LabelKeyboardAlias" VerticalAlignment="Center"
-                           FontWeight="SemiBold" FontSize="16" Foreground="Blue"/>
+                           FontWeight="SemiBold" FontSize="16" Foreground="{StaticResource Primary}"/>
                 <TextBox x:Name="InputKeyboardAlias" VerticalAlignment="Center"
-                           FontWeight="SemiBold" FontSize="16" Foreground="Blue" Width="0"/>
+                           FontWeight="SemiBold" FontSize="16" Foreground="{StaticResource Primary}" Width="0"/>
                 <Button Name="ButtonKeyboardAliasEdit" Content="{x:Static p:Strings.KeyboardAliasEdit}"
                         Width="Auto" MinWidth="60" Height="20" Margin="15,0,0,0"
                         Click="ButtonKeyboardAliasEdit_Click"/>
@@ -37,7 +37,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <local:ModifiersControl x:Name="ModifiersControl" Margin="5" Width="Auto" ModifierSelectionChanged="ModifierSelectionChanged" HorizontalAlignment="Left" />
+                <local:ModifiersControl x:Name="ModifiersControl" Margin="5" Width="Auto" ModifierSelectionChanged="ModifierSelectionChanged" HorizontalAlignment="Left" Foreground="{StaticResource PrimaryText}"/>
                 <Button x:Name="ButtonChangePhysicalLayout" Content="{x:Static p:Strings.KeyboardControlChangePhysicalLayout}"
                         HorizontalAlignment="Right" Margin="0, 0, 10, 0"
                         Width="Auto" MinWidth="80"
@@ -48,7 +48,7 @@
                         HorizontalAlignment="Right" Margin="0, 0, 10, 0"
                         Width="Auto" MinWidth="80"
                         Height="23"
-                        Foreground="DarkRed"
+                        Foreground="{StaticResource ErrorPrimary}"
                         Grid.Column="2"
                         Click="ButtonDeleteKeyboard_Click"/>
             </Grid>

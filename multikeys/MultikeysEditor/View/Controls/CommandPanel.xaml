@@ -9,12 +9,12 @@
              MinHeight="200" MaxWidth="280">
 
     <UserControl.Resources>
-        <TextBlock x:Key="Title" x:Shared="false" Foreground="Blue" FontSize="18" FontWeight="Bold" Margin="10, 5, 10, 0" />
-        <TextBlock x:Key="Content" x:Shared="false" FontSize="16" Margin="10, 5, 10, 0" TextTrimming="CharacterEllipsis" TextWrapping="WrapWithOverflow" />
+        <TextBlock x:Key="Title" x:Shared="false" Foreground="{StaticResource PrimaryLight}" FontSize="18" FontWeight="Bold" Margin="10, 5, 10, 0" />
+        <TextBlock x:Key="Content" Foreground="{StaticResource PrimaryText}" x:Shared="false" FontSize="16" Margin="10, 5, 10, 0" TextTrimming="CharacterEllipsis" TextWrapping="WrapWithOverflow" />
     </UserControl.Resources>
 
     <Grid>
-        <Rectangle Margin="0,0,0,0" Stroke="Black" StrokeThickness="3" RadiusX="4" RadiusY="4" Fill="White" Opacity="0.625" Panel.ZIndex="-1" />
+        <Rectangle Margin="0,0,0,0" Stroke="#161e35" StrokeThickness="3" RadiusX="4" RadiusY="4" Fill="#161e35" Panel.ZIndex="-1" />
         <StackPanel x:Name="StackPanelData" Panel.ZIndex="0">
             
         </StackPanel>

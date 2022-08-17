@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:MultikeysEditor"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="Backround">#080C25</SolidColorBrush>
+            <SolidColorBrush x:Key="BackroundLight">#161E35</SolidColorBrush>
+            <SolidColorBrush x:Key="PrimaryText">#FFFFFF</SolidColorBrush>
+            <SolidColorBrush x:Key="Primary">#3071E7</SolidColorBrush>
+            <SolidColorBrush x:Key="PrimaryLight">#A6B2EC</SolidColorBrush>
+            <SolidColorBrush x:Key="ErrorPrimary">#A6B2EC</SolidColorBrush>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -15,13 +15,15 @@
                       Height="30"
                       Width="auto" MinWidth="70"
                       FontSize="16" FontWeight="SemiBold"
-                      Checked="ModifierClicked" Unchecked="ModifierClicked" />
+                      Checked="ModifierClicked" Unchecked="ModifierClicked" 
+                      Foreground="{StaticResource PrimaryLight}"
+                      Background="{StaticResource BackroundLight}"/>
     </UserControl.Resources>
     
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Auto">
             <StackPanel Margin="0" Orientation="Horizontal">
-                <TextBlock x:Name="lblModifiers" Margin="10,0, 0, 0" Text="{Binding Source={x:Static p:Strings.Modifiers}, StringFormat='{}{0}: '}" TextAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" />
+                <TextBlock x:Name="lblModifiers" Margin="10,0, 0, 0" Text="{Binding Source={x:Static p:Strings.Modifiers}, StringFormat='{}{0}: '}" TextAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="DemiBold" Foreground="{StaticResource PrimaryLight}"/>
                 <StackPanel x:Name="ModifierButtons" Margin="0" Width="Auto" Orientation="Horizontal" />
             </StackPanel>
         </ScrollViewer>

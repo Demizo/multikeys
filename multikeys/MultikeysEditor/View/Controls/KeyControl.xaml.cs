@@ -212,41 +212,41 @@ namespace MultikeysEditor.View.Controls
             if (Command == null && Modifier == null)
             {
                 MiddleLabel.Text = " ";
-                MiddleLabel.Foreground = Brushes.Gray;
-                SetOutlineColor(Brushes.SlateGray);
+                MiddleLabel.Foreground = (Brush)this.FindResource("PrimaryText");
+                SetOutlineColor((Brush)this.FindResource("BackroundLight"));
             }
             // 2. This key is remapped to a command
             else if (Command != null)
             {
-                MiddleLabel.Foreground = Brushes.Black;
+                MiddleLabel.Foreground = (Brush)this.FindResource("PrimaryText");
 
                 if (Command is DeadKeyCommand)  // dead keys show up as red characters
                 {
                     MiddleLabel.Text = (Command as UnicodeCommand).ContentAsText;
-                    MiddleLabel.Foreground = Brushes.Red;
+                    MiddleLabel.Foreground = (Brush)this.FindResource("ErrorPrimary");
                 }
                 else if (Command is UnicodeCommand)
                 {
                     MiddleLabel.Text = (Command as UnicodeCommand).ContentAsText;
-                    MiddleLabel.Foreground = Brushes.Black;
+                    MiddleLabel.Foreground = (Brush)this.FindResource("PrimaryText");
                 }
                 else MiddleLabel.Text = "...";
 
-                SetOutlineColor(Brushes.Black);
+                SetOutlineColor((Brush)this.FindResource("BackroundLight"));
             }
             // 3. This key is remapped to a modifier, and that modifier is not pressed down
             else if (Modifier != null && !IsModifierSelected)
             {
                 MiddleLabel.Text = Modifier.Name;
-                MiddleLabel.Foreground = Brushes.Blue;
-                SetOutlineColor(Brushes.Black);
+                MiddleLabel.Foreground = (Brush)this.FindResource("Primary");
+                SetOutlineColor((Brush)this.FindResource("PrimaryLight"));
             }
             // 4. This key is remapped to a modifier, and that modifier is pressed down
             else if (Modifier != null && IsModifierSelected)
             {
                 MiddleLabel.Text = Modifier.Name;
-                MiddleLabel.Foreground = Brushes.Blue;
-                SetOutlineColor(Brushes.Blue);
+                MiddleLabel.Foreground = (Brush)this.FindResource("Primary");
+                SetOutlineColor((Brush)this.FindResource("Primary"));
             }
         }
 

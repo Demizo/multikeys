@@ -14,27 +14,21 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Menu VerticalAlignment="Top" HorizontalAlignment="Stretch">
-            <MenuItem Header="{x:Static p:Strings.MenuFile}">
-                <MenuItem x:Name="MenuFileNew" Header="{x:Static p:Strings.MenuFileNew}" Click="FileNew_Click"/>
-                <MenuItem x:Name="MenuFileSave" Header="{x:Static p:Strings.MenuFileSave}" Click="FileSave_Click"/>
-                <MenuItem x:Name="MenuFileSaveAs" Header="{x:Static p:Strings.MenuFileSaveAs}" Click="FileSaveAs_Click"/>
-                <MenuItem x:Name="MenuFileOpen" Header="{x:Static p:Strings.MenuFileOpen}" Click="FileOpen_Click"/>
-                <Separator/>
-                <MenuItem x:Name="MenuImportKeyboard" Header="{x:Static p:Strings.MenuImportKeyboard}" Click="FileImportKeyboard_Click"/>
-                <Separator/>
-                <MenuItem x:Name="MenuFileClose" Header="{x:Static p:Strings.MenuFileClose}" Click="FileClose_Click"/>
+        <Menu VerticalAlignment="Top" HorizontalAlignment="Stretch" Background="{StaticResource BackroundLight}" Foreground="{StaticResource Primary}">
+            <MenuItem Header="{x:Static p:Strings.MenuFile}" Background="{StaticResource BackroundLight}" Padding="0">
+                <MenuItem x:Name="MenuFileNew" Header="{x:Static p:Strings.MenuFileNew}" Click="FileNew_Click" Background="{StaticResource BackroundLight}"/>
+                <MenuItem x:Name="MenuFileSave" Header="{x:Static p:Strings.MenuFileSave}" Click="FileSave_Click" Background="{StaticResource BackroundLight}"/>
+                <MenuItem x:Name="MenuFileSaveAs" Header="{x:Static p:Strings.MenuFileSaveAs}" Click="FileSaveAs_Click" Background="{StaticResource BackroundLight}"/>
+                <MenuItem x:Name="MenuFileOpen" Header="{x:Static p:Strings.MenuFileOpen}" Click="FileOpen_Click" Background="{StaticResource BackroundLight}"/>
+                <Separator Background="{StaticResource BackroundLight}"/>
+                <MenuItem x:Name="MenuImportKeyboard" Header="{x:Static p:Strings.MenuImportKeyboard}" Click="FileImportKeyboard_Click" Background="{StaticResource BackroundLight}"/>
+                <Separator Background="{StaticResource BackroundLight}"/>
+                <MenuItem x:Name="MenuFileClose" Header="{x:Static p:Strings.MenuFileClose}" Click="FileClose_Click" Background="{StaticResource BackroundLight}"/>
             </MenuItem>
         </Menu>
-        <DockPanel x:Name="DockPanelLayout" Grid.Row="1"/>
-        <Grid Grid.Row="2">
-            <Rectangle Height="70">
-                <Rectangle.Fill>
-                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                        <GradientStop Color="#FFFFD386"/>
-                        <GradientStop Color="#FFFFF0D6" Offset="1"/>
-                    </LinearGradientBrush>
-                </Rectangle.Fill>
+        <DockPanel x:Name="DockPanelLayout" Grid.Row="1" Background="{StaticResource Backround}"/>
+        <Grid Grid.Row="2" Background="{StaticResource BackroundLight}">
+            <Rectangle Height="70" >
             </Rectangle>
             
             <Image x:Name="BackgroundRunnerIconStart"
@@ -54,6 +48,7 @@
                    HorizontalAlignment="Left" Margin="65,10,0,0" VerticalAlignment="Top"
                    FontSize="24"
                    FontWeight="SemiBold"
+                   Foreground="{StaticResource Primary}"
                    />
 
 
